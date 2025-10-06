@@ -188,8 +188,8 @@ section {
 .tarjeta {
     display: inline-block;    
     text-align: center;  
-    font-family:'Courier New', Courier, monospace;
-    font-size: 1.6rem
+    font-size: 2rem;
+    margin-bottom: 50px;
 }
 
 .tarjeta-imagen {
@@ -241,11 +241,12 @@ section {
     display: flex;
     gap: 50px;
     max-width: 800px;
+    align-items: center;
+    justify-content: center;
 }
 
 .perfil-foto {
-    width: 170px;
-    height: auto;
+    height: 90px;
     border: 1px solid #E0E0E0;
     border-radius: 10px;
 }
