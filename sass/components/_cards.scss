@@ -8,11 +8,14 @@
   transition: all 1s ease-in-out;
 }
 
-.card:hover {
-  border-radius: 30px;
-  border-width: 5px;
-  background-color: color.scale(variables.$color-naranja-claro, $lightness:45%);  
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 20);
+@media (min-width: 768px)
+  {
+  .card:hover {
+    border-radius: 30px;
+    border-width: 5px;
+    background-color: color.scale(variables.$color-naranja-claro, $lightness:45%);  
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 20);
+  }
 }
 
 .tarjeta {

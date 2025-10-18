@@ -361,10 +361,12 @@ input[type=submit] {
   transition: background-color 0.2s ease-in-out;
   transition: all 500ms ease-in-out;
 }
-input[type=button]:hover,
-input[type=submit]:hover {
-  background-color: #E65D15;
-  transform: scale(1.2);
+@media (min-width: 768px) {
+  input[type=button]:hover,
+  input[type=submit]:hover {
+    background-color: #E65D15;
+    transform: scale(1.2);
+  }
 }
 
 @media (max-width: 767px) {
@@ -386,13 +388,14 @@ input[type=submit]:hover {
   transition: all 1s ease-in-out;
 }
 
-.card:hover {
-  border-radius: 30px;
-  border-width: 5px;
-  background-color: rgb(251.7, 175.25, 137.85);
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+@media (min-width: 768px) {
+  .card:hover {
+    border-radius: 30px;
+    border-width: 5px;
+    background-color: rgb(251.7, 175.25, 137.85);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  }
 }
-
 .tarjeta {
   display: inline-block;
   text-align: center;

@@ -18,9 +18,12 @@ input[type="submit"] {
   @include mixins.button-style(variables.$color-naranja-claro);
   transition: all 500ms ease-in-out;
 
-  &:hover {
-    background-color: variables.$color-naranja-oscuro;
-    transform: scale(1.2);    
+  @media (min-width: 768px)
+  {
+    &:hover {
+      background-color: variables.$color-naranja-oscuro;
+      transform: scale(1.2);    
+    }
   }
 }
 
