@@ -1,0 +1,23 @@
+@use "../settings/variables";
+
+.seccion-contactenos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.form-contactenos {
+    text-align: left;
+    background-color: variables.$color-blanco-opaco;
+    border: 1px solid variables.$color-blanco-opaco;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .seccion-contactenos {
+        grid-template-columns: 1fr;
+    }
+}

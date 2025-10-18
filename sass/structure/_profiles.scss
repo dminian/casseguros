@@ -1,0 +1,41 @@
+@use "../settings/variables";
+
+.perfiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: variables.$color-blanco-opaco;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 800px;
+}
+
+.perfil-foto {
+  width: 120px;
+  height: auto;
+  border: 1px solid variables.$color-blanco-opaco;
+  border-radius: 10px;
+}
+
+.perfil-nombre {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.perfil-descripcion {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 50px;
+  text-align: left;
+}

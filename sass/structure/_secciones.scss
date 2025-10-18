@@ -1,0 +1,28 @@
+.seccion-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.seccion-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.seccion-imagen img {
+    max-height: 780px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .seccion-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-imagen {
+        display: none;
+    }
+}

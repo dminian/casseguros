@@ -183,24 +183,6 @@ section {
     margin: 30px;
 }
 
-/* Estilo tarjetas tipos de seguros */
-
-.tarjeta {
-    display: inline-block;    
-    text-align: center;  
-    font-size: 2rem;
-    margin-bottom: 50px;
-}
-
-.tarjeta-imagen {
-    display: inline-block;    
-    text-align: center;
-    height: 400px;
-    border: 1px solid #E0E0E0;
-    margin: 15px;
-    border-radius: 10px;
-}
-
 .seccion-contactenos {
     display: grid;
     grid-template-columns: 2fr 1fr;

@@ -1,0 +1,23 @@
+@use "variables";
+
+// Mixins
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1024px) { @content; }
+  }
+}
+
+@mixin button-style($bg, $color: variables.$color-blanco) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.2s ease-in-out;
+}

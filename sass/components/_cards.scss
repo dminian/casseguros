@@ -1,0 +1,49 @@
+@use "../settings/variables";
+@use "sass:color";
+
+.card {
+  text-align: left;
+  border-radius: 20px;
+  background-color: color.scale(variables.$color-naranja-claro, $lightness:75%);
+  transition: all 1s ease-in-out;
+}
+
+.card:hover {
+  border-radius: 30px;
+  border-width: 5px;
+  background-color: color.scale(variables.$color-naranja-claro, $lightness:45%);  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 20);
+}
+
+.tarjeta {
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  transition: all 1s;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-imagen {
+  display: inline-block;
+  height: 400px;
+  margin: 15px;
+  border: 1px solid variables.$color-blanco-opaco;
+  border-radius: 10px;
+  text-align: center;
+  filter: grayscale(100%);
+  transition: filter 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+.tarjeta-imagen {
+    filter: grayscale(0%);    
+}
+}
+
+.tarjeta:hover .tarjeta-imagen {
+  filter: grayscale(0%);
+}

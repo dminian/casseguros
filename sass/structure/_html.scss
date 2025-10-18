@@ -1,0 +1,259 @@
+@use "../settings/variables";
+@use "../settings/mixins";
+@use "sass:color";
+
+html {
+  font-size: variables.$font-size-base;
+  scroll-behavior: smooth;
+
+  body {
+    font-family: variables.$font-main;
+    color: variables.$color-gris-medio;
+    background-color: variables.$color-crema;
+    text-align: center;
+
+    header {
+      nav {
+        background-color: variables.$color-negro;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: variables.$z-nav;
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          list-style: none;
+
+          li {
+            margin: 0 5px;
+            font-size: 1.6rem;
+
+            &:first-child {
+              margin-right: auto;
+            }
+
+            a {
+
+              display: block;
+              padding: 1.5rem 2rem;
+              color: variables.$color-blanco-opaco;
+              text-decoration: none;
+              transition: all 1s;
+
+              &:hover {
+                color: variables.$color-negro;
+                background-color: color.scale(variables.$color-crema, $lightness: -10%);
+                border-radius: 10px;          
+              }
+
+              &:has(img.logo):hover {
+                background: none;
+              }
+
+              @include mixins.respond-to(mobile) {
+                padding: 1rem;
+                font-size: 1.4rem;
+              }
+
+              .logo {
+                display: block;
+                width: 163px;
+              }
+            }
+          }
+        }
+
+        @include mixins.respond-to(mobile) {
+          ul li a {
+            padding: 1rem;
+            font-size: 1.4rem;
+          }
+        }
+      }   
+    }
+
+    hr {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {      
+      margin-top: 70px;
+
+    a {
+        color: variables.$color-azul;
+        text-decoration: none;
+      }
+
+      .banner {
+          background-position: bottom;
+          background-size: cover;
+          height: 30vw;
+          animation: expande 5s ease 0s infinite alternate both;
+
+      }
+
+      .banner-index {
+        @extend .banner;
+        background-image: url('../medios/banner.png');
+      }
+
+      .banner-servicios {
+        @extend .banner;
+        background-image: url("../medios/banner2.png");
+      }
+
+      section {
+        display: block;
+        font-size: 1.5rem;
+        padding: variables.$spacing;
+
+        h1, h2, h3, h4, h5 {
+          padding: variables.$spacing;
+          text-align: center;
+        }
+
+        h1 { font-size: 4rem; color: variables.$color-gris-oscuro; }
+        h2 { font-size: 3rem; color: variables.$color-naranja-oscuro; }
+        h3 { font-size: 2.5rem; color: color.adjust(variables.$color-naranja-claro, $lightness: 10%); }
+        h4 { font-size: 2rem; color: variables.$color-gris-oscuro; text-align: left; font-weight: bolder; }
+        h5 { font-size: 1.7rem; color: variables.$color-gris-medio; text-align: left; }
+
+        .label { font-weight: 800; }
+        .texto-alineado-izquierda { text-align: left; }
+        .texto-resaltado { font-weight: bolder; }
+
+        @keyframes expande {
+          0% {
+            background-position: center bottom;
+            background-size: 100%;
+          }
+
+          100% {
+            background-position: center bottom;
+            background-size: 150%;
+          }
+        }
+
+        .logoseccion {
+            width: 200px;
+            margin: 30px;
+        }
+      }
+
+      .link-fijo {
+        position: fixed;
+        top: 90%;
+        right: 15px;
+        padding: 10px;
+        z-index: variables.$z-nav;
+      }
+
+    }
+
+    footer {
+      display: block;
+      background-color: variables.$color-blanco-opaco;
+      width: 100%;
+      font-size: 1.3rem;
+
+      .footer-contenedor {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        grid-template-areas:
+          "item1 item2 item3"
+          "item4 item5 item5";
+        gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+
+        @include mixins.respond-to(mobile) {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5";
+        }
+      }
+
+      .item1 { grid-area: item1;}
+      .item2 { grid-area: item2;}
+      .item3 { grid-area: item3; background: variables.$color-blanco-opaco }
+      .item4 { grid-area: item4; background: variables.$color-gris-medio; color:variables.$color-blanco-opaco }
+      .item5 { grid-area: item5; }
+
+      a {
+        color: variables.$color-gris-claro;
+        text-decoration: none;
+      }
+
+      .logofooter {
+        width: 163px;
+
+        @include mixins.respond-to(mobile) {
+          width: 200px;
+        }
+      }
+
+      .datos-servicio {
+          list-style: none;
+          padding: 0;
+          margin: 10px 0;
+      }
+
+      .datos-servicio li {
+          margin-bottom: 4px;
+      }
+
+      .datos-servicio strong {
+          color: variables.$color-negro;
+      }
+
+      .datos-servicio a {
+          color: variables.$color-blanco-opaco;
+          text-decoration: none;
+      }
+
+      .datos-servicio a:hover {
+          text-decoration: underline;
+      }
+
+      .reclamo {
+          margin-top: 15px;
+          font-size: 1.3rem;
+          color: variables.$color-gris-medio;
+      }
+
+      .label {
+          font-weight: 800;
+      }
+
+      .recuadro {
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 0;
+        padding: 10px;
+
+        @include mixins.respond-to(mobile) {
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+
+      .contacto-footer {
+        list-style: none;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../settings/variables";
+@use "../settings/mixins";
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: variables.$color-gris-oscuro;
+}
+
+input[type="button"],
+input[type="submit"] {
+  @include mixins.button-style(variables.$color-naranja-claro);
+  transition: all 500ms ease-in-out;
+
+  &:hover {
+    background-color: variables.$color-naranja-oscuro;
+    transform: scale(1.2);    
+  }
+}
+
+@include mixins.respond-to(mobile) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  input[type="button"],
+  input[type="submit"] {
+    width: 100%;
+  }
+}
