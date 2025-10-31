@@ -178,8 +178,14 @@ html body footer .footer-contenedor {
 html body footer .item1 {
   grid-area: item1;
 }
+html body footer .item1 div {
+  padding: 10px;
+}
 html body footer .item2 {
   grid-area: item2;
+}
+html body footer .item2 div {
+  padding: 10px;
 }
 html body footer .item3 {
   grid-area: item3;
@@ -192,6 +198,9 @@ html body footer .item4 {
 }
 html body footer .item5 {
   grid-area: item5;
+}
+html body footer .item5 div {
+  padding: 10px;
 }
 html body footer a {
   color: #606060;
@@ -307,7 +316,7 @@ html body footer .contacto-footer {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .seccion-contenedor {
     grid-template-columns: 1fr;
   }
